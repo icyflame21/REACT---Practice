@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { Slider } from "./Components/Carasouel/Slider";
+import { Debounce } from "./Components/Debounce Search Bar/Debounce";
+import { InifiniteScrolling } from "./Components/InifiniteScrolling/InifiniteScrolling";
+import { Preloader } from "./Components/Preloader/Preloader";
+import { Progess } from "./Components/Progress/Progress";
+// import { Todo } from "./Components/Todo";
+// import { Todo } from "./Components/React-Todo/React-Todo";
+import { StopWatch } from './Components/StopWatch/StopWatch'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <div className="App">
+      <StopWatch/>
+    // </div>
+    //<Slider/>
+    // <Preloader/> 
   );
 }
 
