@@ -30,13 +30,12 @@ export const Slider = () => {
       setSlideIndex((slideIndex) =>
         slideIndex < imageArr.length - 1 ? slideIndex + 1 : 0
       );
-    }, 3000);
+    }, 1000);
 
     return () => {
       clearInterval(id);
     };
   }, []);
-  
   useEffect(() => {
     getImages(API_URL);
   }, []);
