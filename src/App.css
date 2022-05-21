@@ -144,7 +144,12 @@ form button:hover {
 .todo_group_container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 70px;
+}
+.disable_btn{
+  background-color: lightgray;
+  color: rgba(0, 0, 0, 0.619);
+ 
 }
 /*CUSTOM SELECTOR */
 select {

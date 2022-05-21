@@ -16,11 +16,11 @@ export const Todo = () => {
   }, [page]);
   let paginate_arr = [];
 
-  for (var i = 0; i < page; i++) {
+  for (var i = 0; i < 10; i++) {
     paginate_arr[i] = i + 1;
   }
   function getTodos(page_num) {
-    fetch(`http://localhost:3000/groceries?_page=${page_num}&_limit=5`)
+    fetch(`http://localhost:3000/groceries?_page=${page_num}&_limit=7`)
       .then((res) => res.json())
       .then((data) => setTodos(data));
   }
@@ -108,7 +108,7 @@ export const Todo = () => {
     } else if (val == "desc") {
       arr.sort((a, b) => parseInt(b.price) - parseInt(a.price));
       setTodos(arr);
-    }
+    } else setTodos(arr);
   };
   const pageChange = (num) => {
     setPage(page + num);
@@ -126,20 +126,18 @@ export const Todo = () => {
       })
     );
   };
-  const handleStatus = () => {
-    console.log(status);
+  const handleStatus = (e) => {
+    console.log(e.target.value);
+    setStatus(e.target.value);
     switch (status) {
       case "completed": {
         setTodos(todos.filter((e) => e.status == true));
-        break;
       }
       case "uncompleted": {
         setTodos(todos.filter((e) => e.status == false));
-        break;
       }
       default:
         setTodos(todos);
-        break;
     }
   };
   return (
@@ -211,7 +209,7 @@ export const Todo = () => {
             </div>
             <div className="select">
               <select
-                onChange={(e) => setStatus(e.target.value)}
+                onChange={(e) => handleStatus(e)}
                 name="todos"
                 className="filter-todo"
                 style={{ marginBottom: "1rem" }}
@@ -278,30 +276,29 @@ export const Todo = () => {
       </div>
       <div className="paginate_btn">
         <button
-          className="prev-btn"
+          className={page == 1 ? "disable_btn" : "prev_btn"}
           onClick={() => pageChange(-1)}
           disabled={page == 1}
         >
           <i className="fas fa-arrow-left"></i>
         </button>
 
-        <div>{page}</div>
-        {/* {paginate_arr.map((i, idx) => (
+        {paginate_arr.map((i, idx) => (
           <button
-            disabled={page == paginate_arr.length}
+            disabled={page == 10}
             key={idx}
             style={{ marginLeft: "10px", padding: "13px" }}
             className={i == page ? "active-btn" : ""}
           >
             {i}
           </button>
-        ))} */}
+        ))}
 
         <button
-          className="next-btn"
           onClick={() => pageChange(1)}
-          disabled={page == [...todos].length}
-          style={{ marginLeft: "10px" }}
+          className={page == 10 ? "disable_btn" : "next_btn"}
+          style={{ marginLeft: "20px" }}
+          disabled={page==10}
         >
           <i className="fas fa-arrow-right"></i>
         </button>
