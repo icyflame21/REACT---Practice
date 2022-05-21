@@ -4,6 +4,11 @@
   box-sizing: border-box;
   overflow: auto;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 body {
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
   color: white;
@@ -23,15 +28,19 @@ form {
 }
 form input,
 form button {
+  cursor: pointer;
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
+  border-radius: 10px;
   background: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 form button {
   color: #ff6f47;
   background: #f7fffe;
   cursor: pointer;
+  
   transition: all 0.3s ease;
 }
 form button:hover {
@@ -55,6 +64,9 @@ form button:hover {
   font-size: 1.5rem;
   color: black;
   display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  width: 900px;
   justify-content: space-between;
   align-items: center;
   transition: all 1s ease;
@@ -67,23 +79,56 @@ form button:hover {
 }
 
 .trash-btn,
-.complete-btn {
+.complete-btn,
+.edit-btn,
+.sort-btn,
+.prev-btn,
+.next-btn {
   background: #ff6f47;
   color: white;
   border: none;
   padding: 1rem;
   cursor: pointer;
+  margin-right: 10px;
   font-size: 1rem;
+  transition: box-shadow 0.2s ease-in-out;
+}
+.trash-btn:hover,
+.complete-btn:hover,
+.edit-btn:hover,
+.sort-btn:hover,
+.prev-btn:hover,
+.next-btn:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .complete-btn {
   background: rgb(11, 212, 162);
 }
+.edit-btn {
+  background-color: royalblue;
+}
+.sort-btn {
+  background-color: lightgreen;
+}
 .todo-item {
   padding: 0rem 0.5rem;
 }
-
+.paginate_btn {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: center;
+}
+.active-btn{
+  background-color: rgba(0, 255, 255, 0.73);
+  color: black;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
 .fa-trash,
-.fa-check {
+.fa-check,
+.fa-edit,
+.fa-arrow-left,
+.fa-arrow-right {
   pointer-events: none;
 }
 
@@ -96,7 +141,11 @@ form button:hover {
   text-decoration: line-through;
   opacity: 0.5;
 }
-
+.todo_group_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /*CUSTOM SELECTOR */
 select {
   -webkit-appearance: none;
@@ -138,7 +187,7 @@ select {
   transform: scale(1.5);
 }
 */
-.App{
+.App {
   background-color: rgb(238, 238, 238);
   width: 100vw;
   height: 100vh;

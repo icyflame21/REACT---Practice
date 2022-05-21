@@ -6,6 +6,7 @@ export const Todo = () => {
   const [filtertodos, setfilterTodos] = useState("all");
   const [filterArray, setfilterArray] = useState([]);
 
+  
   const handleDelete = (todo) => {
     setTodos(todos.filter((e) => e.id !== todo.id));
   };
@@ -75,7 +76,7 @@ export const Todo = () => {
               <button className="trash-btn" onClick={() => handleDelete(item)}>
                 <i className="fas fa-trash"></i>
               </button>
-              <button className="edit-btn" onClick={() => handleEdit(item)}>
+              <button className="edit-btn" onClick={() => handleEdit(item.id)}>
                 EDIT
               </button>
             </div>

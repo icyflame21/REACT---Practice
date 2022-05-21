@@ -1,0 +1,18 @@
+{
+  "groceries": [
+    {
+      "groceryName": "Rice",
+      "quantity": "1",
+      "price": "80",
+      "status": false,
+      "id": "f484fd84-3930-4a58-b364-2e8466779977"
+    },
+    {
+      "groceryName": "Dal",
+      "quantity": "2",
+      "price": "300",
+      "status": false,
+      "id": "77a98971-97e7-442e-b75d-fdda95bbc65d"
+    }
+  ]
+}
