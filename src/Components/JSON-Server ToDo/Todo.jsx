@@ -67,8 +67,8 @@ export const Todo = () => {
     }).then(() => getTodos());
   };
   const EditHandler = (item) => {
-    setState({ ...item });
-    if (window.confirm("Are you sure you want to edit this") === true) {
+    if (window.confirm("Are you sure you want to edit this ?") === true) {
+      setState({ ...item });
       setEdit(true);
     }
   };

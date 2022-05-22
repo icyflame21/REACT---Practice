@@ -15,41 +15,52 @@ export const RecursiveComment = ({ commentData }) => {
     newArr[id] = !newArr[id];
     setArr(newArr);
   };
-
+  function date(time) {
+    let date = new Date(time);
+    date =
+      date.toLocaleDateString() +
+      "     " +
+      date.toLocaleTimeString("en-US", {
+        weekday: "short",
+        hour: "numeric",
+        minute: "numeric",
+        localeMatcher: "lookup",
+      });
+    return date;
+  }
   return commentData.map((ele, idx) => (
     <div
       style={{
-        marginLeft: "100px",
+        marginLeft:"70px",
         marginTop: "30px",
         fontSize: "22px",
+        width: "90%",
         marginBottom: "50px",
+        border: "1px solid grey",
+        padding: "10px",
+        borderRadius: "10px",
       }}
       key={idx}
     >
-      <span style={{ color: "green" }}>
+      <span style={{ color: "green" ,fontSize:'20px',textTransform:'capitalize'}}>
         {ele.author}
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        {ele.points} Points <br />
-        <br />{" "}
-        <strong style={{ paddingLeft: "20px", color: "black" }}>
+        {ele.points} Points &nbsp;&nbsp;&nbsp;&nbsp;{date(ele.timestamp)}
+        <br />
+        <br />
+        <strong style={{  color: "black" ,fontSize:'17px',fontWeight:'500'}}>
           {ele.body}
         </strong>
         <br />
         <span
-          style={{ paddingLeft: "20px", color: "gray", cursor: "pointer" }}
+          style={{color: "gray", cursor: "pointer" ,fontSize:'16px'}}
           onClick={func}
           id={idx}
         >
-          Reply GiveAward Share Report Save
+          Reply
         </span>
       </span>
-      <div
-        style={{
-          borderLeft: "3px solid gray",
-        }}
-      >
-        {arr[idx] && <RecursiveComment commentData={ele.replies} />}
-      </div>
+      <div style={{borderLeft:"3px solid black",marginTop:'10px'}}>{arr[idx] && <RecursiveComment commentData={ele.replies} />}</div>
     </div>
   ));
 };

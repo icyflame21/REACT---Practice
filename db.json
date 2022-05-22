@@ -1,16 +1,9 @@
 {
   "groceries": [
     {
-      "groceryName": "Rice",
-      "quantity": "1",
-      "price": "80",
-      "status": false,
-      "id": "f484fd84-3930-4a58-b364-2e8466779977"
-    },
-    {
       "groceryName": "Biscuits",
       "quantity": "2",
-      "price": "2",
+      "price": "200",
       "status": false,
       "id": "cfc39a67-1457-4cbc-a839-bf327e1936d7"
     },
@@ -20,62 +13,6 @@
       "price": "80",
       "status": false,
       "id": "f484fd84-3930-4a58-b364-2e8466779977"
-    },
-    {
-      "groceryName": "Dal",
-      "quantity": "2",
-      "price": "300",
-      "status": false,
-      "id": "77a98971-97e7-442e-b75d-fdda95bbc65d"
-    },
-    {
-      "groceryName": "Biscuits",
-      "quantity": "2",
-      "price": "2",
-      "status": false,
-      "id": "cfc39a67-1457-4cbc-a839-bf327e1936d7"
-    },
-    {
-      "groceryName": "Rice",
-      "quantity": "1",
-      "price": "80",
-      "status": false,
-      "id": "f484fd84-3930-4a58-b364-2e8466779977"
-    },
-    {
-      "groceryName": "Dal",
-      "quantity": "2",
-      "price": "300",
-      "status": false,
-      "id": "77a98971-97e7-442e-b75d-fdda95bbc65d"
-    },
-    {
-      "groceryName": "Biscuits",
-      "quantity": "2",
-      "price": "2",
-      "status": false,
-      "id": "cfc39a67-1457-4cbc-a839-bf327e1936d7"
-    },
-    {
-      "groceryName": "Rice",
-      "quantity": "1",
-      "price": "80",
-      "status": false,
-      "id": "f484fd84-3930-4a58-b364-2e8466779977"
-    },
-    {
-      "groceryName": "Dal",
-      "quantity": "2",
-      "price": "300",
-      "status": false,
-      "id": "77a98971-97e7-442e-b75d-fdda95bbc65d"
-    },
-    {
-      "groceryName": "Biscuits",
-      "quantity": "2",
-      "price": "2",
-      "status": false,
-      "id": "cfc39a67-1457-4cbc-a839-bf327e1936d7"
     }
   ]
 }

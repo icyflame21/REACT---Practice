@@ -15,11 +15,11 @@ function App() {
     // <div className="App">
       //<StopWatch/>
     //<InifiniteScrolling/>
-    // <Main/>
+    <Main/>
     // </div>
     //<Slider/>
     // <Preloader/> 
-    <Todo/>
+    // <Todo/>
   );
 }
 
