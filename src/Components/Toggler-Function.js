@@ -1,11 +1,10 @@
-function toggler() {
-  let arr = arguments;
+function toggler(...args) {
   let index = -1;
   return function () {
     index += 1;
-    if (index >= arr.length) index = 0;
+    if (index >= args.length) index = 0;
 
-    return arr[index];
+    return args[index];
   };
 }
 

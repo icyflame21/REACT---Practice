@@ -12,7 +12,7 @@ const print = (name) => {
 };
 
 const th = myDebounce(print, 3000);
-th("biswa");
-th("Biswa");
+  th('Biswa')
+  th('Biswa')
 
  
