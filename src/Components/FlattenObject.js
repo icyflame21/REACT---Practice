@@ -8,7 +8,7 @@ let obj = {
             username: 'Kalam',
             age: '21',
             profession: 'Student',
-            profession_details: {
+            profession__details: {
                 job: 'developer',
                 site: 'bangalore',
                 type:'WFH'
@@ -19,7 +19,7 @@ let obj = {
 
 function flattenObj(obj, parent, result = {}) {
     for (var k in obj) {
-        var temp = parent ? parent + "-" + k : k
+        var temp = parent ? parent + "." + k : k
         if (typeof obj[k] === "object") {
             flattenObj(obj[k],temp,result)
         }
