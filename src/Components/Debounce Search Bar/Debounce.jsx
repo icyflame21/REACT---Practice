@@ -31,7 +31,7 @@ export const Debounce = () => {
     position: "absolute",
     top: "12rem",
     borderRadius: 5,
-    left: "10.3rem",
+    left: "9.7rem",
     border: "1px solid black",
   };
   const title = {
@@ -52,13 +52,12 @@ export const Debounce = () => {
       />
       {res ? (
         <div style={suggestionBox}>
-          {res
-            ? res.map((e, idx) => (
+          {res.map((e, idx) => (
                 <div key={idx}>
                   <p style={title}>{e.title}</p>
                 </div>
               ))
-            : ""}
+            }
         </div>
       ) : (
         ""

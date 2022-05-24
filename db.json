@@ -9,10 +9,59 @@
     },
     {
       "groceryName": "Rice",
-      "quantity": "1",
-      "price": "80",
+      "quantity": "2",
+      "price": "211",
       "status": false,
       "id": "f484fd84-3930-4a58-b364-2e8466779977"
+    },
+    {
+      "groceryName": "Bsadaw",
+      "quantity": "12",
+      "price": "2121",
+      "status": false,
+      "id": "b14f0963-4d1e-4351-9dc7-9c4f05455e8a"
+    },
+    {
+      "groceryName": "2121",
+      "quantity": "2112",
+      "price": "212111",
+      "status": false,
+      "id": "1a7e8993-7ab8-4b77-8892-10204defbbe2"
+    },
+    {
+      "groceryName": "Banana",
+      "quantity": "12",
+      "price": "145",
+      "status": false,
+      "id": "a330a245-f2da-40a7-9a63-c573efaf5540"
+    },
+    {
+      "groceryName": "2",
+      "quantity": "21",
+      "price": "2113",
+      "status": false,
+      "id": "1b260d1d-ed78-465d-967a-0756a2ad72de"
+    },
+    {
+      "groceryName": "131414",
+      "quantity": "1342",
+      "price": "31131",
+      "status": false,
+      "id": "383291b5-10d5-4ea8-8935-58f847841c38"
+    },
+    {
+      "groceryName": "Dal",
+      "quantity": "3",
+      "price": "500",
+      "status": false,
+      "id": "57eac53c-3362-419d-b979-ce0292516a4c"
+    },
+    {
+      "groceryName": "Biswa",
+      "quantity": "2",
+      "price": "45",
+      "status": false,
+      "id": "28454706-e772-43f7-ba8f-854feaba1f93"
     }
   ]
 }

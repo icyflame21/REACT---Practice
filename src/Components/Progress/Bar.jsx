@@ -5,10 +5,11 @@ export const Bar = ({ bgcolor, progess }) => {
 
   const parentDiv = {
     height: "30px",
-    width: "100%",
+    width: "100vw",
     backgroundColor: "rgb(225,225,225)",
-    borderRadius: "40",
+    borderRadius: 40,
     margin: "35px 0",
+    
   };
   const childDiv = {
     height: "100%",
@@ -16,7 +17,8 @@ export const Bar = ({ bgcolor, progess }) => {
     backgroundColor: bgcolor,
     borderRadius: 40,
     transition: ".7s ease-in-out",
-    textAlign: "right",
+    textAlign: "center",
+    overflow:"hidden",
   };
   const progressText = {
     padding: 10,

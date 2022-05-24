@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import dataslider from "./data";
 import "./Slider.css";
 import { SliderBtn } from "./SliderBtn";
 

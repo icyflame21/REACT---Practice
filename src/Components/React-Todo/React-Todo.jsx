@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Form } from "./Form";
 export const Todo = () => {
   const [inputText, setInputText] = useState("");
+  const [id, setId] = useState("");
   const [todos, setTodos] = useState([]);
   const [filtertodos, setfilterTodos] = useState("all");
   const [filterArray, setfilterArray] = useState([]);
-
+  const[flag,setFlag] = useState(false)
   
   const handleDelete = (todo) => {
     setTodos(todos.filter((e) => e.id !== todo.id));
@@ -42,14 +43,22 @@ export const Todo = () => {
     }
   };
   const handleEdit = (item) => {
-    setInputText(item.text)
+    if (window.confirm('Are you sure you want to edit this ?') === true) {
+      setInputText(item.text)
+      setFlag(true)
+      setId(item.id)
+    }
   }
   return (
     <>
       <header>
-        <h1>Todo List</h1>
+        <h1 style={{textTransform:'uppercase'}}>Todo List</h1>
       </header>
       <Form
+        setId={id}
+        setFlag={setFlag}
+        flag={flag}
+        handleEdit={handleEdit}
         setInputText={setInputText}
         setTodos={setTodos}
         inputText={inputText}
@@ -76,8 +85,8 @@ export const Todo = () => {
               <button className="trash-btn" onClick={() => handleDelete(item)}>
                 <i className="fas fa-trash"></i>
               </button>
-              <button className="edit-btn" onClick={() => handleEdit(item.id)}>
-                EDIT
+              <button className="edit-btn" onClick={() => handleEdit(item)}>
+              <i className="fas fa-edit"></i>
               </button>
             </div>
           ))}

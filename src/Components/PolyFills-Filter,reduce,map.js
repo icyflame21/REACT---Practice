@@ -2,30 +2,30 @@
 
 //  <!-- map() method -->
 
-var a=[5,2,6,8];
-var r = a.map(item => item*2);          // map() is invoked here
-console.log(r);
-// The output is: Array [10, 4, 12, 16]
+// var a=[5,2,6,8];
+// var r = a.map(item => item*2);          // map() is invoked here
+// console.log(r);
+// // The output is: Array [10, 4, 12, 16]
 
-Syntax:- 
-let new_array = arr.map(function callback( currentValue, index, array) {
-// return element for new_array
-},[thisArg])
+// Syntax:- 
+// let new_array = arr.map(function callback( currentValue, index, array) {
+// // return element for new_array
+// },[thisArg])
 
 
-Custom map
-Array.prototype.myMap = function (callback) {
-    let arr = []
-    for (var i = 0; i < this.length; i++) {
-    arr.push(callback(this[i]))
-    }
-    return arr
-}
-var a = [5, 2, 6, 8]
-var r = a.myMap(e => e * 3)
-console.log(r);
+// Custom map
+// Array.prototype.myMap = function (callback) {
+//     let arr = []
+//     for (var i = 0; i < this.length; i++) {
+//     arr.push(callback(this[i]))
+//     }
+//     return arr
+// }
+// var a = [5, 2, 6, 8]
+// var r = a.myMap(e => e * 3)
+// console.log(r);
 
-Syntax:- let newArray = arr.filter(callback(element, index,array)[thisArg])
+// Syntax:- let newArray = arr.filter(callback(element, index,array)[thisArg])
 
 // Custom  Filter Function
 // Array.prototype.myFilter = function (callback) {
@@ -38,16 +38,18 @@ Syntax:- let newArray = arr.filter(callback(element, index,array)[thisArg])
 // }
 
 
-Syntax:- arr.reduce(callback( accumulator, currentValue, index, array )[initialValue])
+// Syntax:- arr.reduce(callback( accumulator, currentValue, index, array )[initialValue])
 
 // Custom Reduce Function
-// Array.prototype.myReduce = function (callback) {
-//     let a=0
-//     for (var i = 0; i < this.length; i++){
-//     callback(a=a+this[i])
-//     }
-//     return a
-// }
-// var a = [5, 2, 6, 8]
-// var r = a.myReduce((acc,curr)=>{acc,curr})
-// console.log(r);
+Array.prototype.myReduce = function (callback) {
+    let a=0
+    for (var i = 0; i < this.length; i++){
+    callback(a=a+this[i])
+    }
+    return a
+}
+var a = [5, 2, 6, 8]
+var r = a.myReduce((acc, curr) => {
+    acc=acc+ curr
+})
+console.log(r);

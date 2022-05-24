@@ -6,7 +6,7 @@ export const Progess = () => {
     "green",
     "yellow",
     "red",
-    "orange",
+    "purple",
     "violet",
     "pink",
   ];

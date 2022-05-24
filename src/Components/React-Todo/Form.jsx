@@ -6,17 +6,34 @@ export const Form = ({
   inputText,
   todos,
   setfilterTodos,
+  setId,
+  flag,
+  setFlag
 }) => {
   const submitTodoHandler = (e) => {
     e.preventDefault();
-    setTodos([
-      ...todos,
-      {
-        text: inputText,
-        completed: false,
-        id: Math.random() * 10000,
-      },
-    ]);
+    if (flag ) {
+      setTodos((todos.map((ele) => {
+        if (ele.id === setId) {
+          return {
+            ...ele,
+            text:inputText
+        }
+        }
+        return ele
+    })))
+      setFlag(false)
+    }
+    else {
+      setTodos([
+        ...todos,
+        {
+          text: inputText,
+          completed: false,
+          id: Math.random() * 10000,
+        },
+      ]);
+    }
     setInputText("");
   };
 
@@ -32,7 +49,7 @@ export const Form = ({
         type="text"
         className="todo-input"
       />
-      <button className="todo-button" onClick={submitTodoHandler} type="submit">
+      <button className="todo-button" onClick={submitTodoHandler} type="submit" style={{marginLeft:'20px'}}>
         <i className="fas fa-plus-square"></i>
       </button>
       <div className="select">

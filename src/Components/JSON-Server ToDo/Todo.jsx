@@ -27,8 +27,8 @@ export const Todo = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (
-      state.groceryName !== "" ||
-      state.quantity !== "" ||
+      state.groceryName !== "" &&
+      state.quantity !== "" &&
       state.price !== ""
     ) {
       if (edit_json) {
@@ -64,7 +64,7 @@ export const Todo = () => {
   const deleteHandler = (id) => {
     fetch(`http://localhost:3000/groceries/${id}`, {
       method: "DELETE",
-    }).then(() => getTodos());
+    }).then(() => getTodos(page));
   };
   const EditHandler = (item) => {
     if (window.confirm("Are you sure you want to edit this ?") === true) {
@@ -81,7 +81,7 @@ export const Todo = () => {
       },
     })
       .then(() => {
-        getTodos();
+        getTodos(page);
       })
       .then(() => {
         setState({
@@ -131,10 +131,17 @@ export const Todo = () => {
     setStatus(e.target.value);
     switch (status) {
       case "completed": {
-        setTodos(todos.filter((e) => e.status == true));
+        setTodos((todos.map((ele) => {
+          if (ele.status === "true") {
+            return getTodos(page)
+          }
+})));
+
+    
       }
       case "uncompleted": {
         setTodos(todos.filter((e) => e.status == false));
+
       }
       default:
         setTodos(todos);
