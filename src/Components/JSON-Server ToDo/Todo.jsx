@@ -8,9 +8,10 @@ export const Todo = () => {
     price: "",
   });
   const [todos, setTodos] = useState([]);
+  const [arr, setArr] = useState([...todos]);
   const [page, setPage] = useState(1);
   const [edit_json, setEdit] = useState(false);
-  const [status, setStatus] = useState("");
+  const [filter_status, setFilterStatus] = useState("");
   useEffect(() => {
     getTodos(page);
   }, [page]);
@@ -22,7 +23,10 @@ export const Todo = () => {
   function getTodos(page_num) {
     fetch(`http://localhost:3000/groceries?_page=${page_num}&_limit=7`)
       .then((res) => res.json())
-      .then((data) => setTodos(data));
+      .then((data) => {
+        setTodos(data)
+        setArr(data)
+      });
   }
   const submitHandler = (e) => {
     e.preventDefault();
@@ -127,26 +131,25 @@ export const Todo = () => {
     );
   };
   const handleStatus = (e) => {
-    console.log(e.target.value);
-    setStatus(e.target.value);
-    switch (status) {
+    setFilterStatus(e.target.value);
+  };
+  useEffect(() => {
+    switch (filter_status) {
       case "completed": {
-        setTodos((todos.map((ele) => {
-          if (ele.status === "true") {
-            return getTodos(page)
-          }
-})));
-
-    
+        setArr(todos.filter((e) => e.status == true));
+        console.log(arr)
+        break;
       }
       case "uncompleted": {
-        setTodos(todos.filter((e) => e.status == false));
-
+        setArr(todos.filter((e) => e.status == false));
+        break;
       }
       default:
-        setTodos(todos);
+        setArr(...todos);
+        break;
     }
-  };
+  },[filter_status,setFilterStatus])
+
   return (
     <>
       <form onSubmit={submitHandler}>
@@ -228,7 +231,7 @@ export const Todo = () => {
             </div>
           </div>
 
-          {todos.map((item) => (
+          {arr?.map((item) => (
             <>
               <div
                 className="todo_group_container"

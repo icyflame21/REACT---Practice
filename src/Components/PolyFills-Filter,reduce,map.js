@@ -5,7 +5,7 @@
 // var a=[5,2,6,8];
 // var r = a.map(item => item*2);          // map() is invoked here
 // console.log(r);
-// // The output is: Array [10, 4, 12, 16]
+// The output is: Array [10, 4, 12, 16]
 
 // Syntax:- 
 // let new_array = arr.map(function callback( currentValue, index, array) {
@@ -41,8 +41,8 @@
 // Syntax:- arr.reduce(callback( accumulator, currentValue, index, array )[initialValue])
 
 // Custom Reduce Function
-Array.prototype.myReduce = function (callback) {
-    let a=0
+Array.prototype.myReduce = function (callback,initialValue) {
+    let a=initialValue
     for (var i = 0; i < this.length; i++){
     callback(a=a+this[i])
     }
@@ -51,5 +51,5 @@ Array.prototype.myReduce = function (callback) {
 var a = [5, 2, 6, 8]
 var r = a.myReduce((acc, curr) => {
     acc=acc+ curr
-})
+},9)
 console.log(r);
