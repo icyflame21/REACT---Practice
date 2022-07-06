@@ -24,8 +24,8 @@ export const Todo = () => {
     fetch(`http://localhost:3000/groceries?_page=${page_num}&_limit=7`)
       .then((res) => res.json())
       .then((data) => {
-        setTodos(data)
-        setArr(data)
+        setTodos(data);
+        setArr(data);
       });
   }
   const submitHandler = (e) => {
@@ -77,24 +77,27 @@ export const Todo = () => {
     }
   };
   const edit = (payload, id) => {
-    fetch(`http://localhost:3000/groceries/${id}`, {
-      method: "PATCH",
-      body: JSON.stringify(payload),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then(() => {
-        getTodos(page);
+    try {
+      fetch(`http://localhost:3000/groceries/${id}`, {
+        method: "PATCH",
+        body: JSON.stringify(payload),
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
-      .then(() => {
-        setState({
-          groceryName: "",
-          quantity: "",
-          price: "",
+        .then(() => {
+          getTodos(page);
+        })
+        .then(() => {
+          setState({
+            groceryName: "",
+            quantity: "",
+            price: "",
+          });
         });
-      })
-      .catch((err) => console.error(err));
+    } catch {
+      (err) => console.error(err);
+    }
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -137,7 +140,7 @@ export const Todo = () => {
     switch (filter_status) {
       case "completed": {
         setArr(todos.filter((e) => e.status == true));
-        console.log(arr)
+        console.log(arr);
         break;
       }
       case "uncompleted": {
@@ -148,7 +151,7 @@ export const Todo = () => {
         setArr(...todos);
         break;
     }
-  },[filter_status,setFilterStatus])
+  }, [filter_status, setFilterStatus]);
 
   return (
     <>
@@ -308,7 +311,7 @@ export const Todo = () => {
           onClick={() => pageChange(1)}
           className={page == 10 ? "disable_btn" : "next_btn"}
           style={{ marginLeft: "20px" }}
-          disabled={page==10}
+          disabled={page == 10}
         >
           <i className="fas fa-arrow-right"></i>
         </button>

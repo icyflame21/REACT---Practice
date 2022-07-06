@@ -1,22 +1,31 @@
 import React, { useState, useEffect } from "react";
 
 export const Debounce = () => {
-  let API_KEY = "21f03053e26ab7eff71356d94e8eaca7";
-  let c = 0;
   const [text, setText] = useState("");
   const [res, setRes] = useState([]);
+  const [res1, setRes1] = useState([]);
+ 
   useEffect(() => {
-    let id = setTimeout(() => {
-      fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${text}`
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          setRes(data.results);
-        });
-    }, 1000);
-    return () => clearTimeout(id);
-  }, [text]);
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res => res.json())
+    .then(data => {
+      setRes(data);
+    });
+   let id,arr=[]
+    if (text != '') {
+      id=setTimeout(() => {
+        res.map((e) => {
+          let a=e.name
+          if (a.toLowerCase().includes(text.toLowerCase())) {
+            arr.push(e.name);
+          }
+          setRes1(arr);
+        })
+      }, 800)
+    }
+    return ()=>{clearTimeout(id)}
+  }, [text])
+  
   const input = {
     padding: "10px",
     border: "1px solid lightgray",
@@ -35,26 +44,29 @@ export const Debounce = () => {
     border: "1px solid black",
   };
   const title = {
-    padding: "10px",
-    marginBottom: "10px",
+    padding: "20px",
     borderBottom: "1px solid lightgray",
-    textAlign: "center",
+    textAlign: "left",
     fontWeight: 500,
+    fontSize: "18px",
+    lineHeight: "1.5rem"
   };
   return (
     <>
       <input
         type="text"
         style={input}
+        autoFocus={true}
+        spellCheck={false}
         placeholder="Search Something..."
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      {res ? (
+      {res1&&text ? (
         <div style={suggestionBox}>
-          {res.map((e, idx) => (
+          {res1.map((e, idx) => (
                 <div key={idx}>
-                  <p style={title}>{e.title}</p>
+                  <p style={title}>{e}</p>
                 </div>
               ))
             }

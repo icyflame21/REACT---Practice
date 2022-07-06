@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './infiniteScroll.css'
 let API_KEY = "21f03053e26ab7eff71356d94e8eaca7";
 
 export const InifiniteScrolling = () => {
@@ -14,19 +15,7 @@ export const InifiniteScrolling = () => {
       });
   }, [page]);
 
-  const container = {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: 30,
-    marginTop: "50px",
-  };
-  const img = {
-    width: "200px",
-    height: "200px",
-    borderRadius: "5px",
-  };
+
 
   const handleImage = (banner) => {
     if (banner == null) {
@@ -38,15 +27,14 @@ export const InifiniteScrolling = () => {
     if (
       window.scrollY + window.innerHeight >=
       document.documentElement.scrollHeight
-    ) {
+    )
       setPage((temp) => temp + 1);
-    }
   });
 
   return (
-    <div style={container}>
+    <div className="container">
       {arr.map((ele) => (
-        <img src={handleImage(ele.poster_path)} style={img} key={ele.id} />
+        <img src={handleImage(ele.poster_path)} key={ele.id} />
       ))}
     </div>
   );

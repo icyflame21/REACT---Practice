@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from "react";
-import GIF from './food.gif'
+// import GIF from './food.gif'
 export const Preloader = () => {
-  const [isLoading, setisLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setisLoading(false);
-    }, 4000);
-  }, []);
+  const btn_primary = {
+    padding: "10px",
+    outline: 'none',
+    backgroundColor: 'whitesmoke',
+    color: 'grey',
+    border: '1px solid red',
+    borderRadius: '5px',
+  }
+  const handleClick = () => {
+    if (document.getElementsByClassName == 'btn') {
+      return (
+       <>
+        <button style={btn_primary} onClick={() => handleClick()} className='btn'>Click me !</button>
+        <button style={btn_primary} onClick={()=>handleClick() } className='btn'>Click me !</button>
+        </> 
+      )
+  }
+  }
   return (
     <>
-      {isLoading ? (
-        <div style={{ fontSize: "40px",textAlign: "center" }}> <img src={GIF} /></div>
-      ) : (
-        <div style={{ color: "green", fontSize: "40px" ,textAlign: "center"}}>HELLO THERE! Biswa</div>
-      )}
+      <button style={btn_primary} onClick={()=>handleClick() } className='btn'>Click me !</button>
     </>
   );
 };

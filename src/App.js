@@ -4,6 +4,7 @@ import { Debounce } from "./Components/Debounce Search Bar/Debounce";
 import { InifiniteScrolling } from "./Components/InifiniteScrolling/InifiniteScrolling";
 import { Todo } from "./Components/JSON-Server ToDo/Todo";
 import { Preloader } from "./Components/Preloader/Preloader";
+import { NewTodo } from "./Components/NewTodo";
 import { Progess } from "./Components/Progress/Progress";
 import Main from "./Components/RecursiveComments/Main";
 // import { Todo } from "./Components/Todo";
@@ -14,11 +15,12 @@ function App() {
   // <></>
     // <div className="App">
       //<StopWatch/>
-    //<InifiniteScrolling/>
+    // <InifiniteScrolling/>
     // <Main/>
     // <Slider/>
-    // <Preloader/>
-    <Todo/>
+    <Preloader/>
+    // <Todo/>
+    // <NewTodo/>
     // <Progess/>
     // <Debounce/>
   );

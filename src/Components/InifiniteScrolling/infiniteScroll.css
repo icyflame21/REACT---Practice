@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: whitesmoke;
+  padding: 40px;
+  margin-top: 0px !important;
+}
+img {
+  width: 250px;
+  height: 290px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: 10% 0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

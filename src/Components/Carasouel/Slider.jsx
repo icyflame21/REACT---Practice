@@ -27,9 +27,9 @@ export const Slider = () => {
   useEffect(() => {
     let id = setInterval(() => {
       setSlideIndex((slideIndex) =>
-        slideIndex < imageArr.length - 1 ? slideIndex + 1 : 0
+        slideIndex < imageArr.length-1  ? slideIndex + 1 : 0
       );
-    }, 1000);
+    }, 2000);
 
     return () => {
       clearInterval(id);

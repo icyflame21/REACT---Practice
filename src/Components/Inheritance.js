@@ -38,8 +38,8 @@ const bookProtos = {
 }
 // Create Object
 const book1 = Object.create(bookProtos, {
-    title: { value: 'Book One' },
+    title: { value: 'Secret' },
     author: { value: 'John Doe' }, 
     year: { value:'2019'}
 })
-console.log(book1);
+console.log(book1.getSummary());

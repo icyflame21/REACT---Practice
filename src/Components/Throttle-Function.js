@@ -12,8 +12,9 @@ const print = (name) => {
   console.log(name);
 };
 
-const th = myThrottle(print, 1000);
+const th = myThrottle(print, 100);
 for (var i = 0; i < 1000000; i++){
     th('Biswa')
 }
+
 

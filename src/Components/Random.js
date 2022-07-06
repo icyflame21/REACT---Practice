@@ -66,12 +66,18 @@
 // let ar2 = [2,8,9,10,15]
 // intersection_array(ar1,ar2)
 
-function recursive_algo(n){
-	let arr = [1, 6];
-	index = n;
-	for (let i = 2; i < index; i++) {
-  	arr[i] = (arr[i - 1] + 2) * 2 - arr[i - 2];
+// function recursive_algo(n){
+// 	let arr = [1, 6];
+// 	index = n;
+// 	for (let i = 2; i < index; i++) {
+//   	arr[i] = (arr[i - 1] + 2) * 2 - arr[i - 2];
+// }
+// 	console.log(arr[index - 1]);	
+// }
+// recursive_algo(1986738954 % (10 ^ 9 + 7))
+function sum() {
+    for (var i = 0; i < 10; i++) {
+    setTimeout((i) =>{console.log(i)},1000*i,i)
+    }
 }
-	console.log(arr[index - 1]);	
-}
-recursive_algo(1986738954%(10^9+7))
+sum()

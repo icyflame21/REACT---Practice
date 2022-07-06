@@ -9,7 +9,7 @@ user1.name = 'Harry Potter'
 console.log(user)
 console.log(user1)
 
-// Deep Copying  with JSON.parse(JSON.strginfy(object_name)) --> with this method method won't get copied into the other object.  to solve this problem we can use loadash CDN linkand use this method _.cloneDeep()
+// Deep Copying  with JSON.parse(JSON.strginfy(object_name)) --> with this method method won't get copied into the other object.  to solve this problem we can use loadash CDN link and use this method _.cloneDeep()
 
 // Shallow Copying won't work for nested objects
 

@@ -8,23 +8,24 @@ export const Form = ({
   setfilterTodos,
   setId,
   flag,
-  setFlag
+  setFlag,
 }) => {
   const submitTodoHandler = (e) => {
     e.preventDefault();
-    if (flag ) {
-      setTodos((todos.map((ele) => {
-        if (ele.id === setId) {
-          return {
-            ...ele,
-            text:inputText
-        }
-        }
-        return ele
-    })))
-      setFlag(false)
-    }
-    else {
+    if (flag) {
+      setTodos(
+        todos.map((ele) => {
+          if (ele.id === setId) {
+            return {
+              ...ele,
+              text: inputText,
+            };
+          }
+          return ele;
+        })
+      );
+      setFlag(false);
+    } else {
       setTodos([
         ...todos,
         {
@@ -49,7 +50,12 @@ export const Form = ({
         type="text"
         className="todo-input"
       />
-      <button className="todo-button" onClick={submitTodoHandler} type="submit" style={{marginLeft:'20px'}}>
+      <button
+        className="todo-button"
+        onClick={submitTodoHandler}
+        type="submit"
+        style={{ marginLeft: "20px" }}
+      >
         <i className="fas fa-plus-square"></i>
       </button>
       <div className="select">
